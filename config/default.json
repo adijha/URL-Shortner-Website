@@ -1,0 +1,4 @@
+{
+	"mongoURI": "mongodb+srv://adi:mern@devconnector-5hotg.mongodb.net/url-shortner?retryWrites=true&w=majority",
+	"baseUrl": "http://localhost:5000"
+}
