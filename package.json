@@ -1,20 +1,28 @@
 {
-  "name": "urlShortner",
-  "version": "1.0.0",
-  "description": "react url shortner",
-  "main": "index.js",
-  "repository": "https://github.com/adijha/url-shortner",
-  "author": "Aditya Kumar Jha",
-  "license": "MIT",
-  "dependencies": {
-    "config": "^3.2.3",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mongoose": "^5.7.6",
-    "shortid": "^2.2.15",
-    "valid-url": "^1.0.9"
-  },
-  "devDependencies": {
-    "nodemon": "^1.19.4"
-  }
+	"name": "url-shortner",
+	"version": "1.0.0",
+	"description": "mern url shortner",
+	"main": "index.js",
+	"repository": "https://github.com/adijha/url-shortner",
+	"author": "Aditya Kumar Jha",
+	"license": "MIT",
+	"scripts": {
+		"start": "node index.js",
+		"server": "nodemon index.js",
+		"client": "npm start --prefix client",
+		"dev": "concurrently \"npm server\" \"npm run client\"",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+	},
+	"dependencies": {
+		"config": "^3.2.3",
+		"concurrently": "^5.0.0",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"mongoose": "^5.7.6",
+		"shortid": "^2.2.15",
+		"valid-url": "^1.0.9"
+	},
+	"devDependencies": {
+		"nodemon": "^1.19.4"
+	}
 }

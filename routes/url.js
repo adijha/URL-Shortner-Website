@@ -10,6 +10,11 @@ const Url = require('../models/Url');
 // @desc      Create short URL
 router.post('/shorten', async (req, res) => {
 	const { longUrl } = req.body;
+	const { followUp } = req.body;
+	const { id } = req.body;
+
+	// console.log(followUp);
+
 	const baseUrl = config.get('baseUrl');
 
 	// Check base url
@@ -34,12 +39,15 @@ router.post('/shorten', async (req, res) => {
 					longUrl,
 					shortUrl,
 					urlCode,
+					followUp,
+					id,
 					date: new Date()
 				});
 
 				await url.save();
 
 				res.json(url);
+				console.log(url);
 			}
 		} catch (err) {
 			console.error(err);
