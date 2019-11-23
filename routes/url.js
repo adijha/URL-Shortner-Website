@@ -5,6 +5,7 @@ const shortid = require('shortid');
 const config = require('config');
 
 const Url = require('../models/Url');
+const Store = require('../models/Shop');
 
 // @route     POST /api/url/shorten
 // @desc      Create short URL
@@ -12,6 +13,7 @@ router.post('/shorten', async (req, res) => {
 	const { longUrl } = req.body;
 	const { followUp } = req.body;
 	const { id } = req.body;
+	const shop = 'mojitotest.myshopify.com';
 
 	// console.log(followUp);
 
@@ -25,7 +27,7 @@ router.post('/shorten', async (req, res) => {
 	// Create url code
 	const urlCode = shortid.generate();
 
-	// Check long url
+	// Check long url /
 	if (validUrl.isUri(longUrl)) {
 		try {
 			let url = await Url.findOne({ longUrl });
@@ -41,7 +43,7 @@ router.post('/shorten', async (req, res) => {
 					urlCode,
 					followUp,
 					id,
-					date: new Date()
+					shop
 				});
 
 				await url.save();

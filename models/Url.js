@@ -5,8 +5,8 @@ const urlSchema = new mongoose.Schema({
 	longUrl: String,
 	shortUrl: String,
 	followUp: String,
-	id: String,
-	date: { type: String, default: Date.now }
+	shop: String,
+	id: String
 });
 
 module.exports = mongoose.model('Url', urlSchema);
