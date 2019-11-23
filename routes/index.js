@@ -32,7 +32,7 @@ router.get("/:code", async (req, res) => {
         { "test.id": 1 },
         {
           $set: {
-            "test.$.followUp": 9999
+            "test.$.followUp": 9
           }
         },
         function(err, data) {

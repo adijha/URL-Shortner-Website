@@ -2,7 +2,7 @@ POST http://localhost:5000/api/url/shorten
 Content-Type: application/json
 
 {
-  "longUrl": "https://okhla.com",
+  "longUrl": "https://nepal.com",
   "followUp": "2",
   "id": "222"
 }

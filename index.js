@@ -1,5 +1,6 @@
 const express = require('express');
-// const cors = require('cors');
+
+const cron = require('node-cron');
 
 const connectDB = require('./config/db');
 
@@ -10,7 +11,10 @@ connectDB();
 
 //accept json input
 app.use(express.json());
-// app.use(cors());
+
+cron.schedule('40-50 25 * * * *', function() {
+	console.log('running a task every minute');
+});
 
 // define routes
 app.use('/', require('./routes/index'));

@@ -14,11 +14,13 @@
 		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
 	},
 	"dependencies": {
-		"config": "^3.2.3",
 		"concurrently": "^5.0.0",
+		"config": "^3.2.3",
 		"cors": "^2.8.5",
 		"express": "^4.17.1",
+		"fs": "0.0.1-security",
 		"mongoose": "^5.7.6",
+		"node-cron": "^2.0.3",
 		"shortid": "^2.2.15",
 		"valid-url": "^1.0.9"
 	},
